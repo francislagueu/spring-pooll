@@ -1,5 +1,6 @@
 package francislagueu.task.models;
 
+import francislagueu.task.models.audit.DateAudit;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
@@ -11,7 +12,7 @@ import java.util.Set;
 
 @Entity
 @Table(name = "user_entity")
-public class User {
+public class User extends DateAudit {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "system-uuid")
     @GenericGenerator(name = "system-uuid", strategy = "uuid2")
